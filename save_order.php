@@ -36,7 +36,7 @@ try {
         $stmt = $pdo->prepare("UPDATE orders SET total_amount = ?, staff_id = ?, order_status = ? WHERE order_id = ?");
         $stmt->execute([$data['total'], $staff_id, $order_status, $order_id]);
 
-        // ลบรายการเก่าทิ้งก่อน เพื่อบันทึกใหม่
+        // ลบรายการเก่าทิ้งก่อน เพื่อบันท
         $pdo->prepare("DELETE FROM order_details WHERE order_id = ?")->execute([$order_id]);
 
     } else {
